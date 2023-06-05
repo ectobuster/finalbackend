@@ -34,7 +34,7 @@ export const posttecnologias = async (req: Request, res: Response) => {
   const result = await tecnologias.create(body);
   res.status(201).json({
     success: true,
-    message: "etecnologia creada correctamente",
+    message: "tecnologia creada correctamente",
     data: result,
   });
 }

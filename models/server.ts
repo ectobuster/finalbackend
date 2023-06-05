@@ -6,6 +6,7 @@ import userRoutes from '../routes/usuarios';
 import techRoutes from '../routes/tecnologias';
 import proyRoutes from '../routes/proyectos';
 import expRoutes from '../routes/elaboral';
+import authRoutes from '../routes/auth';
 import usuarios from './usuarios';
 
 
@@ -17,7 +18,8 @@ class Server {
     usuarios: '/api/usuarios',
     tecnologias: '/api/tecnologias',
     proyectos: '/api/proyectos',
-    elaboral: '/api/elaboral'
+    elaboral: '/api/elaboral',
+    auth: '/api/auth'
   }
 
   constructor() {
@@ -50,6 +52,8 @@ class Server {
     this.app.use(this.apiPaths.tecnologias, techRoutes);
     this.app.use(this.apiPaths.proyectos, proyRoutes);
     this.app.use(this.apiPaths.elaboral, expRoutes)
+    this.app.use(this.apiPaths.auth, authRoutes)
+
   }
 
   listen() {
