@@ -3,6 +3,9 @@ const generarJWT = ( uid = '' ) => {
 
   return new Promise((resolve, reject) => {
     const payload = { uid };
+    
+    console.log('u i de:',uid,process.env.SECRETKEY,payload)
+
     jwt.sign(payload, process.env.SECRETKEY || '', {
       expiresIn: '4h'
     }, (err, token) => {

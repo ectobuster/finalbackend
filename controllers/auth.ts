@@ -36,10 +36,17 @@ export const login = async (req: Request, res: Response) => {
 
     //verficar la contraseña
     if (req.body.contrasenia = usuario.dataValues.contrasenia){
-      
+      const token = await generarJWT(usuario.dataValues.idusuario);
+
      res.json({ 
+
+      token,
+      usuario: usuario.dataValues,
+      msg: 'ingreso al login',
+    
+
       estatus: 1, 
-      msg: 'Sesion ingresada con exito'})
+})
     }
 
     // const validPassword = contrasenia, usuario.dataValues.contrasenia ;
